@@ -1,0 +1,119 @@
+﻿[
+  {
+    "module_id": "security",
+    "module": "Security",
+    "sub_module_id": "roles",
+    "sub_module_name": "Roles",
+    "events": [
+      {
+        "event_name": "Role Creation Success",
+        "event_key": "sec_rol_crt_scs",
+        "message": "Role Created Successful",
+        "event_description": "New security role {role_name} created by {user_id}:{user_name}",
+        "message_ar": "تم إنشاء الدور بنجاح",
+        "event_description_ar": "تم إنشاء دور الأمان الجديد {role_name} بواسطة {user_id}: {user_name}",
+        "frontend_key": "Created",
+        "success": true,
+        "reasons": []
+      },
+      {
+        "event_name": "Role Creation Failed",
+        "event_key": "sec_rol_crt_fld",
+        "message": "Role Creation Failed",
+        "event_descriptioon": "New security role {role_name} creation failed by {user_id}:{user_name}",
+        "message_ar": "فشل إنشاء الدور",
+        "event_description_ar": "فشل إنشاء دور الأمان الجديد {role_name} بواسطة {user_id}: {user_name}",
+        "frontend_key": "Creation Failed",
+        "success": false,
+        "reasons": [
+          {
+            "reson_id": "role_duplication",
+            "reason": "Role name already exist"
+          },
+          {
+            "reson_id": "user_permision",
+            "reason": "User has no permission to create role"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "sub_module_id": "security",
+    "sub_module_name": "Web User Request",
+    "module": "Security",
+    "module_id": "web-user-request",
+    "events": [
+      {
+        "event_name": "Web User Request Approval Success",
+        "event_key": "sec_web-usr-rqst_aprv_scs",
+        "message": "Web User Request Approved",
+        "event_description": "Web user request for {user_id}:{requested_for_user} approved by {user_id}:{user_name}",
+        "message_ar": "تمت الموافقة على طلب مستخدم الويب",
+        "event_description_ar": "طلب مستخدم الويب لـ {user_id}: تمت الموافقة على {request_for_user} بواسطة {user_id}: {user_name}",
+        "frontend_key": "Approved",
+        "success": true,
+        "reasons": []
+      },
+      {
+        "event_name": "Web User Request Approval Failed",
+        "event_key": "sec_web-usr-rqst_aprv_fld",
+        "message": "Web User Request Approval Failed",
+        "event_description": "Web user request for {user_id}:{requested_for_user} approval by {user_id}:{user_name} Failed",
+        "message_ar": "فشلت الموافقة على طلب مستخدم الويب",
+        "event_description_ar": "طلب مستخدم الويب لـ {user_id}: موافقة {requested_for_user} بواسطة {user_id}: فشل {user_name}",
+        "frontend_key": "Approval Failed",
+        "success": false,
+        "reasons": [
+          {
+            "reson_id": "request_already_approved",
+            "reason": "Already approved"
+          },
+          {
+            "reson_id": "request_already_rejected",
+            "reason": "Already rejected"
+          },
+          {
+            "reson_id": "user_permision",
+            "reason": "User has no permission"
+          }
+        ]
+      },
+      {
+        "event_name": "Web User Request Rejection Success",
+        "event_key": "sec_web-usr-rqst_rjct_scs",
+        "message": "Web User Request Rejected",
+        "event_description": "Web user request for {user_id}:{requested_for_user} rejected by {user_id}:{user_name}",
+        "message_ar": "تم رفض طلب مستخدم الويب",
+        "event_description_ar": "طلب مستخدم الويب لـ {user_id}: تم رفض {request_for_user} بواسطة {user_id}: {user_name}",
+        "frontend_key": "Rejected",
+        "success": true,
+        "reasons": []
+      },
+      {
+        "event_name": "Web User Request Approval Failed",
+        "event_key": "sec_web-usr-rqst_rjct_fld",
+        "message": "Web User Request Rejection Failed",
+        "event_description": "Web user request for {user_id}:{requested_for_user} rejection by {user_id}:{user_name} Failed",
+        "message_ar": "فشل رفض طلب مستخدم الويب",
+        "event_description_ar": "طلب مستخدم الويب لـ {user_id}: {required_for_user} الرفض بواسطة {user_id}: فشل {user_name}",
+        "frontend_key": "Rejection Failed",
+        "success": false,
+        "reasons": [
+          {
+            "reson_id": "request_already_approved",
+            "reason": "Already approved"
+          },
+          {
+            "reson_id": "request_already_rejected",
+            "reason": "Already rejected"
+          },
+          {
+            "reson_id": "user_permision",
+            "reason": "User has no permission"
+          }
+        ]
+      }
+    ]
+  }
+]
